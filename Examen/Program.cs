@@ -12,12 +12,18 @@ namespace Examen
   ///   Основной метод программы 
   /// </summary>
     public class Program
-    {      
-        // основной модуль отвечающий лишь за вызов метода подсчёта
+    {
+        /// <summary>
+        /// основной модуль отвечающий лишь за вызов класса действий (Action)
+        /// </summary>
+        /// <param name="args"> 
+        /// Внутри обитают структуры для вызово других классов и методов
+        /// </param>
+        
         static void Main(string[] args)
         {
             Actions actions = new Actions();
-            actions.Perem();
+            actions.Count();
             actions.Conclusion();
             Console.ReadKey();           
         }
@@ -39,7 +45,10 @@ namespace Examen
             string reponse = "Кратчайший путь ";
             string reponse1 = "Кратчайший путь 2 ";
 
-            public void Perem( )
+            /// <summary>
+            /// модуль для подсчёта кратчайшего пути   
+            /// </summary>
+            public void Count( )
             {
                 // структура try catch для выведения ошибок в случае неправильного ввода
                 try
@@ -164,7 +173,10 @@ namespace Examen
               
           
             }
-            // модуль вывода кратчайшего пути   
+          
+            /// <summary>
+            /// модуль вывода кратчайшего пути   
+            /// </summary>
             public void Conclusion()
             {
                 // конструкция if else для вывода ответа в главный модуль
