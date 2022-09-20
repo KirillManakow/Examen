@@ -9,14 +9,14 @@ namespace UnitTestProject1
     [TestClass]
     public class UnitTest1
     {
-        Count count = new Count();
+        Actions actions = new Actions();
 
         // Данный тест расчитан на проверку того, 
         // что если переменная answer1 будет равнять 0 то ответ должне выводиться 1
         [TestMethod]
         public void TestMethod1()
         {
-            Assert.AreEqual(count.answer1, 0);
+            Assert.AreEqual(actions.answer1, 0);
             
         }
     }

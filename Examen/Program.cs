@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Examen
 {
 
   /// <summary>
-  ///   Основной метод программы , в котором будут вызываться остальные
+  ///   Основной метод программы 
   /// </summary>
     public class Program
     {      
         // основной модуль отвечающий лишь за вызов метода подсчёта
         static void Main(string[] args)
         {
-            Count count = new Count();
-            count.Perem();
-            count.Conclusion();
+            Actions actions = new Actions();
+            actions.Perem();
+            actions.Conclusion();
             Console.ReadKey();           
         }
      
@@ -26,7 +27,7 @@ namespace Examen
         /// 1- подсчёт критического пути
         /// 2- вывод критического пути пользователю на экран
         /// </summary>
-    public class Count
+    public class Actions
         {
             // переменный куда будут записываться данный в случае нахождения 1 или нескольких крит. путей
             public int answer = 0; 
@@ -37,6 +38,7 @@ namespace Examen
             */
             string reponse = "Кратчайший путь ";
             string reponse1 = "Кратчайший путь 2 ";
+
             public void Perem( )
             {
                 // структура try catch для выведения ошибок в случае неправильного ввода
@@ -160,8 +162,7 @@ namespace Examen
                     Console.WriteLine("Ошибка в ведении расстояния\n");
                 }
               
-
-            
+          
             }
             // модуль вывода кратчайшего пути   
             public void Conclusion()
@@ -172,15 +173,17 @@ namespace Examen
                 if (answer1 == 0)
                 {
                     Console.WriteLine($"\n {reponse} = {answer}");
+                    Debug.WriteLine($"\n {reponse} = {answer}");
+                  
                 }
                 // в данном случае будут выводиться два кратчайших путь
                 else
                 {
                     Console.WriteLine($"\n {reponse} = {answer}\n {reponse1} = {answer1}");
+                    Debug.WriteLine($"\n {reponse} = {answer}\n {reponse1} = {answer1}");
                 }
             }
-        }
-       
+        }      
     }
     
 }
