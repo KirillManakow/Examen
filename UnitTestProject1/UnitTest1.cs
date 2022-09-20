@@ -5,11 +5,14 @@ using static Examen.Program;
 
 namespace UnitTestProject1
 {
+    
     [TestClass]
     public class UnitTest1
     {
         Count count = new Count();
 
+        // Данный тест расчитан на проверку того, 
+        // что если переменная answer1 будет равнять 0 то ответ должне выводиться 1
         [TestMethod]
         public void TestMethod1()
         {
