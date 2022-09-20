@@ -11,11 +11,13 @@ namespace Examen
   /// 
   /// </summary>
     public class Program
-    {       
+    {      
+        // основной модуль отвечающий лишь за вызов метода подсчёта
         static void Main(string[] args)
         {
             Count count = new Count();
             count.Perem();
+            count.Conclusion();
             Console.ReadKey();           
         }
      
@@ -23,11 +25,12 @@ namespace Examen
         {
             public int answer = 0;
             public int answer1 = 0;
+            string reponse = "Кратчайший путь ";
+            string reponse1 = "Кратчайший путь 2 ";
             public void Perem( )
             {
 
-                string reponse = "Кратчайший путь ";
-                string reponse1 = "Кратчайший путь 2 ";
+               
 
                 Console.Write("Введите расстояние от 1 до 2: ");
                 int one_two = Convert.ToInt32(Console.ReadLine());
@@ -137,6 +140,11 @@ namespace Examen
                         answer1 = one_four + four_six + six_seven;
                     }
                 }
+
+            
+            }
+            public void Conclusion()
+            {
                 if (answer1 == 0)
                 {
                     Console.WriteLine($"\n {reponse} = {answer}");
